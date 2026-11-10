@@ -1,5 +1,7 @@
 # XSD → форма → XML
 
+**▶ Демо: https://autohn.github.io/xml-xsd-demo/**
+
 Демо: выбираете XSD-схему из корня проекта — по ней на лету строится вложенная форма (React + shadcn/ui + Tailwind v4 + zod). Значения валидируются по схеме, готовый XML можно скачать.
 
 ## Запуск
@@ -38,6 +40,6 @@ tests/                  vitest: загрузчик, типы, XML, e2e с xmllin
 
 ## Демо в сети
 
-- **Локально из CI-артефакта:** в Actions у каждого запуска есть артефакт `demo-dist` — распакуйте и выполните `npx serve demo-dist` (ES-модули не открываются по `file://`).
-- **GitHub Pages:** workflow `.github/workflows/pages.yml` публикует сайт, если задана переменная репозитория `PAGES_ENABLED=true` и Pages доступны (для приватного репозитория нужен платный тариф).
+- **GitHub Pages:** https://autohn.github.io/xml-xsd-demo/ — обновляется автоматически при каждом пуше в `main` (`.github/workflows/pages.yml`).
+- **Локально из CI-артефакта:** у каждого запуска в Actions есть артефакт `demo-dist` — распакуйте и выполните `npx serve demo-dist`.
 - **Vercel:** Vite определяется автоматически (build: `npm run build`, output: `dist`).
