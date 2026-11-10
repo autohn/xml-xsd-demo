@@ -38,4 +38,6 @@ tests/                  vitest: загрузчик, типы, XML, e2e с xmllin
 
 ## Демо в сети
 
-Workflow `.github/workflows/pages.yml` собирает и публикует сайт на GitHub Pages (для приватного репозитория нужен тариф с поддержкой Pages). Альтернатива — Vercel (Vite определяется автоматически).
+- **Локально из CI-артефакта:** в Actions у каждого запуска есть артефакт `demo-dist` — распакуйте и выполните `npx serve demo-dist` (ES-модули не открываются по `file://`).
+- **GitHub Pages:** workflow `.github/workflows/pages.yml` публикует сайт, если задана переменная репозитория `PAGES_ENABLED=true` и Pages доступны (для приватного репозитория нужен платный тариф).
+- **Vercel:** Vite определяется автоматически (build: `npm run build`, output: `dist`).
