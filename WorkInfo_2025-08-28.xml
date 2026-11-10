@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="WorkInfo_2025-08-28.xsl"?>
+<workInfo
+  xmlns="http://idJournals/WorkInfo.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ct="http://types/CommonTypes.xsd"
+  xmlns:bt="http://types/BaseTypes.xsd"
+  xmlns:bd="http://types/BaseDocument.xsd"
+  xmlns:sg="http://www.w3.org/2000/09/xmldsig#"
+  xsi:schemaLocation="http://idJournals/WorkInfo.xsd WorkInfo.xsd http://types/CommonTypes.xsd ../types/CommonTypes.xsd http://types/BaseTypes.xsd ../types/BaseTypes.xsd http://types/BaseDocument.xsd ../types/BaseDocument.xsd http://www.w3.org/2000/09/xmldsig# ../types/Xmldsig.xsd">
+  <permanentObjectId>550e8400-e29b-41d4-a716-446655440000</permanentObjectId>
+  <docInfo>
+    <name>Журнал работ. Раздел 3. Секция А</name>
+    <number>JR-3-A/2025-08</number>
+    <JournalID>GOSNADZOR-77-2025-000123</JournalID>
+  </docInfo>
+  <arrayInfo>
+    <info id="4845c8ed-e71c-4604-86ff-cd1d423774ce">
+      <workRecordInfo>
+        <generalWorkJournalRecordId>11111111-2222-3333-4444-555555555555</generalWorkJournalRecordId>
+        <workCompletionDate>2025-08-20</workCompletionDate>
+      </workRecordInfo>
+      <constructionWorksInfoList>
+        <constructionWorksInfoListItem>
+          <ct:location>
+            <ct:obligatoryAxes>
+              <ct:axes>оси2</ct:axes>
+              <ct:ranks>ряды</ct:ranks>
+              <ct:marks>отметки</ct:marks>
+              <ct:floors>этажи</ct:floors>
+              <ct:tiers>ярусы</ct:tiers>
+              <ct:sections>скции</ct:sections>
+              <ct:premises>помещения</ct:premises>
+            </ct:obligatoryAxes>
+          </ct:location>
+          <ct:qualityAssuranceRecordId>идентификатор</ct:qualityAssuranceRecordId>
+        </constructionWorksInfoListItem>
+      </constructionWorksInfoList>
+      <asBuiltSchemas>
+        <asBuiltSchema>
+          <ct:name>Исполнительный чертёж П-3</ct:name>
+          <ct:number>ИС-CH-P3-02</ct:number>
+          <id>bbbbbbbb-cccc-dddd-eeee-ffffffffffff</id>
+          <date>2025-08-21</date>
+        </asBuiltSchema>
+      </asBuiltSchemas>
+      <examResults>
+        <examResult>
+          <ct:name>Протокол лабораторных испытаний бетона</ct:name>
+          <ct:number>LAB-PRT-2025/0819</ct:number>
+          <ct:date>2025-08-22</ct:date>
+          <examinationName>Испытание контрольных кубов на прочность</examinationName>
+          <attachedDocuments>
+            <ct:fileWithInternalSignature>
+              <ct:file>
+                <ct:id>DOC-0001</ct:id>
+                <ct:name>lab_report_2025-08-22.pdf</ct:name>
+              </ct:file>
+            </ct:fileWithInternalSignature>
+          </attachedDocuments>
+        </examResult>
+      </examResults>
+    </info>
+  </arrayInfo>
+</workInfo>
