@@ -184,6 +184,8 @@ export async function loadSchemaSet(entry: string, read: FileReader): Promise<Sc
   for (const el of children(first.root, 'element')) { const decl = element(el, first, '', true); roots.push({ id: `element:${decl.key}`, label: decl.name, kind: 'element', decl, doc: decl.doc }) }
   const named = children(first.root, 'complexType').map(el => complex(el, first, key(first.file.targetNamespace, attr(el, 'name') ?? ''))).filter(t => t.name).sort((a, b) => a.name!.localeCompare(b.name!))
   for (const t of named) { const id = `type:${key(t.ns, t.name!)}`; roots.push({ id, label: t.name!, kind: 'type', decl: { key: id, name: t.name!, ns: t.ns, global: false, type: t }, doc: t.doc }) }
+  const namedSimple = children(first.root, 'simpleType').map(el => simple(el, first, key(first.file.targetNamespace, attr(el, 'name') ?? ''))).filter(t => t.name).sort((a, b) => a.name!.localeCompare(b.name!))
+  for (const t of namedSimple) { const id = `type:${key(t.ns, t.name!)}`; roots.push({ id, label: t.name!, kind: 'type', decl: { key: id, name: t.name!, ns: t.ns, global: false, type: t }, doc: t.doc }) }
   const prefixes: Record<string, string> = {}, used = new Set<string>(['xml', 'xmlns', 'xsi', 'xs', 'xsd', ''])
   prefixes[first.file.targetNamespace] = ''
   for (const source of sources) for (const [prefix, uri] of Object.entries(source.file.prefixes)) {

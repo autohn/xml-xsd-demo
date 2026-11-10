@@ -13,7 +13,7 @@ function PopoverContent({ className, align = 'start', sideOffset = 8, ...props }
         align={align}
         sideOffset={sideOffset}
         className={cn(
-          'retro-surface z-50 w-80 rounded-2xl bg-popover p-3 text-popover-foreground outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+          'retro-surface z-50 w-80 rounded-xl bg-popover p-3 text-popover-foreground outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
           className,
         )}
         {...props}
@@ -32,7 +32,7 @@ function TooltipContent({ className, sideOffset = 6, children, ...props }: React
       <TooltipPrimitive.Content
         sideOffset={sideOffset}
         className={cn(
-          'retro-surface z-50 max-w-sm rounded-xl bg-popover px-3 py-2 text-xs leading-relaxed whitespace-pre-line text-popover-foreground data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0',
+          'retro-surface z-50 max-w-sm rounded-lg bg-popover px-3 py-2 text-xs leading-relaxed whitespace-pre-line text-popover-foreground data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0',
           className,
         )}
         {...props}

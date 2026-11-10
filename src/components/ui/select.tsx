@@ -30,7 +30,7 @@ function SelectContent({ className, children, position = 'popper', ...props }: R
         data-slot="select-content"
         position={position}
         className={cn(
-          'retro-surface relative z-50 max-h-80 min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-2xl bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+          'retro-surface relative z-50 max-h-80 min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-xl bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
           className,
         )}
         sideOffset={6}
@@ -47,7 +47,7 @@ function SelectItem({ className, children, ...props }: React.ComponentProps<type
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        'relative flex w-full cursor-pointer items-center gap-2 rounded-xl py-2 pr-8 pl-3 text-sm outline-none select-none data-[highlighted]:bg-accent data-[state=checked]:font-medium',
+        'relative flex w-full cursor-pointer items-center gap-2 rounded-lg py-2 pr-8 pl-3 text-sm outline-none select-none data-[highlighted]:bg-accent data-[state=checked]:font-medium',
         className,
       )}
       {...props}

@@ -86,7 +86,7 @@ export function Combobox({
                       onChange(o.value)
                       setOpen(false)
                     }}
-                    className="flex cursor-pointer items-start gap-2 rounded-xl px-3 py-2 text-sm data-[selected=true]:bg-accent"
+                    className="flex cursor-pointer items-start gap-2 rounded-lg px-3 py-2 text-sm data-[selected=true]:bg-accent"
                   >
                     <Check className={cn('mt-0.5 size-4 shrink-0 text-primary', o.value === value ? 'opacity-100' : 'opacity-0')} />
                     <span className="min-w-0">

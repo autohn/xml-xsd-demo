@@ -154,13 +154,13 @@ export const ElementView = memo(function ElementView(props: ElementViewProps) {
   }
 
   return (
-    <section id={fieldDomId(pk)} className={cn('rounded-3xl border-2 border-l-[6px] bg-card shadow-[0_3px_0_0_var(--shadow-ink)]', railOf(depth))} data-kind="complex">
+    <section id={fieldDomId(pk)} className={cn('rounded-2xl border-2 border-l-[6px] bg-card shadow-[0_3px_0_0_var(--shadow-ink)]', railOf(depth))} data-kind="complex">
       <div className="flex items-center gap-2 p-2.5 pl-3">
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
-          className="flex min-w-0 flex-1 cursor-pointer items-start gap-2 rounded-2xl p-1 text-left transition-colors hover:bg-accent/60"
+          className="flex min-w-0 flex-1 cursor-pointer items-start gap-2 rounded-xl p-1 text-left transition-colors hover:bg-accent/60"
         >
           {open ? <ChevronDown className="mt-0.5 size-4 shrink-0 text-muted-foreground" /> : <ChevronRight className="mt-0.5 size-4 shrink-0 text-muted-foreground" />}
           <span className="min-w-0">
@@ -200,7 +200,7 @@ function ElementBody({ inst, path, depth }: { inst: ElementInst; path: Path; dep
   return (
     <>
       {type.kind === 'complex' && type.attributes.length > 0 && (
-        <div className="space-y-2.5 rounded-2xl border-2 border-dashed border-border/80 p-3">
+        <div className="space-y-2.5 rounded-xl border-2 border-dashed border-border/80 p-3">
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">Атрибуты</p>
           {type.attributes.map((a) => (
             <AttrField key={a.key} inst={inst} attr={a} path={path} />
@@ -380,7 +380,7 @@ function AddRow({ label, onAdd }: { label: string; onAdd: () => void }) {
     <button
       type="button"
       onClick={onAdd}
-      className="group flex w-full cursor-pointer items-center gap-3 rounded-2xl border-2 border-dashed border-border px-3.5 py-2.5 text-left text-sm text-muted-foreground transition-colors hover:border-primary hover:bg-primary/10 hover:text-foreground"
+      className="group flex w-full cursor-pointer items-center gap-3 rounded-xl border-2 border-dashed border-border px-3.5 py-2.5 text-left text-sm text-muted-foreground transition-colors hover:border-primary hover:bg-primary/10 hover:text-foreground"
     >
       <span className="flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-current transition-transform group-hover:rotate-90">
         <Plus className="size-3.5" />
@@ -431,7 +431,7 @@ const ItemView = memo(function ItemView({ item, path, pk, slotPath, depth, parti
 function GroupFrame({ ctl, slotPath, particle, children }: { ctl: ItemCtl; slotPath: Path; particle: Particle; children: ReactNode }) {
   if (ctl.ctlMode === 'none') return <>{children}</>
   return (
-    <div className="space-y-3 rounded-2xl border-2 border-dashed border-border p-3">
+    <div className="space-y-3 rounded-xl border-2 border-dashed border-border p-3">
       <div className="flex items-center gap-2">
         {ctl.ctlMode === 'list' && <Badge variant="mono">#{ctl.index + 1}</Badge>}
         <span className="min-w-0 truncate text-xs font-medium text-muted-foreground">{particleTitle(particle)}</span>
@@ -462,7 +462,7 @@ function ChoiceView({ item, path, depth, particle }: { item: ChoiceInst; path: P
   const many = branches.length > 4
   const select = (i: number) => update(path, (c: ChoiceInst) => choiceSelect(c, i))
   return (
-    <div className="space-y-3 rounded-2xl border-2 border-border bg-muted/50 p-3">
+    <div className="space-y-3 rounded-xl border-2 border-border bg-muted/50 p-3">
       <div className="flex flex-wrap items-center gap-2">
         <Badge variant="primary">Выбор 1 из {branches.length}</Badge>
         <span className="text-xs text-muted-foreground">xs:choice — допустим ровно один вариант</span>
@@ -492,7 +492,7 @@ function ChoiceView({ item, path, depth, particle }: { item: ChoiceInst; path: P
                 aria-checked={on}
                 onClick={() => !on && select(i)}
                 className={cn(
-                  'retro-press min-w-0 cursor-pointer rounded-2xl border-2 px-3.5 py-2 text-left text-sm leading-snug sm:max-w-[48%]',
+                  'retro-press min-w-0 cursor-pointer rounded-xl border-2 px-3.5 py-2 text-left text-sm leading-snug sm:max-w-[48%]',
                   on ? 'border-primary bg-primary/20 font-medium text-foreground' : 'border-border bg-card text-muted-foreground hover:text-foreground',
                 )}
               >

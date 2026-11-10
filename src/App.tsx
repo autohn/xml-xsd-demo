@@ -202,7 +202,7 @@ export default function App() {
         value: r.id,
         label: r.kind === 'element' ? `<${r.label}>` : r.label,
         hint: shortTitle(r.doc, '', 120) || undefined,
-        group: r.kind === 'element' ? 'Элементы' : 'Типы',
+        group: r.kind === 'element' ? 'Элементы' : r.decl.type.kind === 'simple' ? 'Простые типы' : 'Сложные типы',
       })),
     [set],
   )
@@ -216,7 +216,7 @@ export default function App() {
         <header className="sticky top-0 z-30 -mx-4 border-b-2 border-border bg-background/90 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
             <div className="flex items-center gap-3">
-              <div className="retro-surface flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+              <div className="retro-surface flex size-11 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                 <FileCode2 className="size-6" strokeWidth={2.4} />
               </div>
               <div className="leading-tight">
@@ -265,7 +265,7 @@ export default function App() {
                 <Wand2 /> Заполнить примером
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-72 space-y-1.5 p-2">
+            <PopoverContent className="w-80 max-w-[calc(100vw-2rem)] space-y-1 p-2">
               {(
                 [
                   ['Только обязательное', 'none'],
@@ -273,7 +273,7 @@ export default function App() {
                   ['Всё, что есть в схеме (до глубины 6)', 'all'],
                 ] as const
               ).map(([label, optional]) => (
-                <Button key={optional} variant="ghost" className="w-full justify-start" onClick={() => onFill({ optional, maxDepth: optional === 'all' ? 6 : 8 })}>
+                <Button key={optional} variant="ghost" className="h-auto w-full justify-start py-2 text-left whitespace-normal" onClick={() => onFill({ optional, maxDepth: optional === 'all' ? 6 : 8 })}>
                   <Sparkles /> {label}
                 </Button>
               ))}
@@ -286,12 +286,12 @@ export default function App() {
                 <FileUp /> Загрузить XML
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-72 space-y-1.5 p-2">
-              <Button variant="ghost" className="w-full justify-start" onClick={() => fileRef.current?.click()}>
+            <PopoverContent className="w-80 max-w-[calc(100vw-2rem)] space-y-1 p-2">
+              <Button variant="ghost" className="h-auto w-full justify-start py-2 text-left whitespace-normal" onClick={() => fileRef.current?.click()}>
                 <FileUp /> Выбрать файл…
               </Button>
               {sample && (
-                <Button variant="ghost" className="w-full justify-start" onClick={async () => applyXml(await sample.load(), sample.name)}>
+                <Button variant="ghost" className="h-auto w-full justify-start py-2 text-left whitespace-normal" onClick={async () => applyXml(await sample.load(), sample.name)}>
                   <FileCode2 /> <span className="truncate">Пример: {sample.name}</span>
                 </Button>
               )}
@@ -330,7 +330,7 @@ export default function App() {
 
         {/* ───────── body ───────── */}
         {loadError && (
-          <div className="rounded-2xl border-2 border-destructive/60 bg-destructive/10 p-4 text-sm text-destructive">
+          <div className="rounded-xl border-2 border-destructive/60 bg-destructive/10 p-4 text-sm text-destructive">
             <p className="font-medium">Не удалось загрузить схему</p>
             <p className="mt-1 font-mono text-xs">{loadError}</p>
           </div>
@@ -420,7 +420,7 @@ export default function App() {
       {/* toast */}
       {notice && (
         <div role="status" className="fixed bottom-5 left-1/2 z-50 w-[min(34rem,calc(100vw-2rem))] -translate-x-1/2">
-          <div className={`retro-surface flex items-start gap-3 rounded-2xl bg-popover px-4 py-3 text-sm ${notice.tone === 'ok' ? 'border-success/60' : 'border-primary/70'}`}>
+          <div className={`retro-surface flex items-start gap-3 rounded-xl bg-popover px-4 py-3 text-sm ${notice.tone === 'ok' ? 'border-success/60' : 'border-primary/70'}`}>
             {notice.tone === 'ok' ? <CheckCheck className="mt-0.5 size-4 shrink-0 text-success" /> : <TriangleAlert className="mt-0.5 size-4 shrink-0 text-primary" />}
             <span className="min-w-0 break-words">{notice.text}</span>
           </div>
@@ -435,7 +435,7 @@ function LoadingCard({ name }: { name: string }) {
     <div className="space-y-3" aria-busy>
       <p className="px-1 font-mono text-xs text-muted-foreground">Разбираю {name}…</p>
       {[0, 1, 2].map((i) => (
-        <div key={i} className="h-24 animate-pulse rounded-3xl border-2 border-border bg-card" style={{ animationDelay: `${i * 120}ms` }} />
+        <div key={i} className="h-24 animate-pulse rounded-2xl border-2 border-border bg-card" style={{ animationDelay: `${i * 120}ms` }} />
       ))}
     </div>
   )

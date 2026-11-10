@@ -8,14 +8,14 @@
 :root {
   --radius: 1rem;
 
-  --gm-bg0: #fbf1c7;
-  --gm-bg1: #f4e8be;
-  --gm-bg2: #eee0b7;
-  --gm-bg3: #e6d5ae;
-  --gm-bg4: #d9c7a0;
-  --gm-fg: #654735;
-  --gm-fg-soft: #7c6f64;
-  --gm-grey: #928374;
+  --gm-bg0: #ffffff;
+  --gm-bg1: #f7f7f7;
+  --gm-bg2: #efefef;
+  --gm-bg3: #e4e4e4;
+  --gm-bg4: #cfcfcf;
+  --gm-fg: #0a0a0a;
+  --gm-fg-soft: #5a5a5a;
+  --gm-grey: #8a8a8a;
   --gm-red: #c14a4a;
   --gm-orange: #c35e0a;
   --gm-yellow: #b47109;
@@ -31,7 +31,7 @@
   --popover: var(--gm-bg1);
   --popover-foreground: var(--gm-fg);
   --primary: var(--gm-yellow);
-  --primary-foreground: #fbf1c7;
+  --primary-foreground: #ffffff;
   --secondary: var(--gm-bg3);
   --secondary-foreground: var(--gm-fg);
   --muted: var(--gm-bg2);
@@ -43,18 +43,18 @@
   --border: var(--gm-bg4);
   --input: var(--gm-bg4);
   --ring: var(--gm-yellow);
-  --shadow-ink: rgb(101 71 53 / 0.22);
+  --shadow-ink: rgb(0 0 0 / 0.16);
 }
 
 .dark {
-  --gm-bg0: #282828;
-  --gm-bg1: #32302f;
-  --gm-bg2: #3c3836;
-  --gm-bg3: #45403d;
-  --gm-bg4: #504945;
-  --gm-fg: #d4be98;
-  --gm-fg-soft: #a89984;
-  --gm-grey: #928374;
+  --gm-bg0: #000000;
+  --gm-bg1: #0f0f0f;
+  --gm-bg2: #171717;
+  --gm-bg3: #222222;
+  --gm-bg4: #363636;
+  --gm-fg: #fafafa;
+  --gm-fg-soft: #a6a6a6;
+  --gm-grey: #7a7a7a;
   --gm-red: #ea6962;
   --gm-orange: #e78a4e;
   --gm-yellow: #d8a657;
@@ -63,7 +63,7 @@
   --gm-blue: #7daea3;
   --gm-purple: #d3869b;
 
-  --primary-foreground: #282828;
+  --primary-foreground: #000000;
   --shadow-ink: rgb(0 0 0 / 0.45);
 }
 
@@ -105,11 +105,12 @@
   --color-gm-purple: var(--gm-purple);
   --color-gm-grey: var(--gm-grey);
 
-  --radius-sm: calc(var(--radius) - 6px);
-  --radius-md: calc(var(--radius) - 3px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 6px);
-  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
 }
 
 @layer base {

@@ -12,14 +12,14 @@ export function XmlPreview({ xml, error }: { xml: string; error?: string }) {
   const html = useMemo(() => highlightXml(xml), [xml])
   if (error) {
     return (
-      <div className="rounded-2xl border-2 border-destructive/60 bg-destructive/10 p-4 text-sm text-destructive">
+      <div className="rounded-xl border-2 border-destructive/60 bg-destructive/10 p-4 text-sm text-destructive">
         <p className="font-medium">Не удалось собрать XML</p>
         <p className="mt-1 font-mono text-xs break-words">{error}</p>
       </div>
     )
   }
   return (
-    <pre className="max-h-[calc(100dvh-16rem)] min-h-40 overflow-auto rounded-2xl border-2 border-border bg-gm-bg0 p-4 font-mono text-[12.5px] leading-relaxed" tabIndex={0}>
+    <pre className="max-h-[calc(100dvh-16rem)] min-h-40 overflow-auto rounded-xl border-2 border-border bg-gm-bg0 p-4 font-mono text-[12.5px] leading-relaxed" tabIndex={0}>
       <code dangerouslySetInnerHTML={{ __html: html }} />
     </pre>
   )
@@ -45,7 +45,7 @@ export function describePath(root: ElementInst, issue: Issue): string {
 export function IssuesList({ root, issues, onPick }: { root: ElementInst; issues: Issue[]; onPick: (issue: Issue) => void }) {
   if (issues.length === 0) {
     return (
-      <div className="flex items-center gap-3 rounded-2xl border-2 border-success/50 bg-success/10 p-4 text-sm">
+      <div className="flex items-center gap-3 rounded-xl border-2 border-success/50 bg-success/10 p-4 text-sm">
         <CheckCircle2 className="size-5 shrink-0 text-success" />
         <div>
           <p className="font-medium">Ошибок не найдено</p>
@@ -61,7 +61,7 @@ export function IssuesList({ root, issues, onPick }: { root: ElementInst; issues
           <button
             type="button"
             onClick={() => onPick(issue)}
-            className="group flex w-full cursor-pointer items-start gap-2.5 rounded-2xl border-2 border-border bg-card px-3 py-2 text-left transition-colors hover:border-destructive/70 hover:bg-destructive/10"
+            className="group flex w-full cursor-pointer items-start gap-2.5 rounded-xl border-2 border-border bg-card px-3 py-2 text-left transition-colors hover:border-destructive/70 hover:bg-destructive/10"
           >
             <OctagonAlert className="mt-0.5 size-4 shrink-0 text-destructive" />
             <span className="min-w-0">
@@ -89,7 +89,7 @@ export function SchemaInfo({ set }: { set: SchemaSet }) {
           ['Сложных типов', set.stats.complexTypes],
           ['Простых типов', set.stats.simpleTypes],
         ].map(([k, v]) => (
-          <div key={k as string} className="rounded-2xl border-2 border-border bg-card px-3 py-2">
+          <div key={k as string} className="rounded-xl border-2 border-border bg-card px-3 py-2">
             <p className="font-mono text-xl font-semibold text-primary">{v}</p>
             <p className="text-xs text-muted-foreground">{k}</p>
           </div>
